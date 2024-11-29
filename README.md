@@ -1,4 +1,3 @@
-# Perbaikan-Final-Lab-AP
 # PROGRAM PENCARIAN HARTA KARUN
 Program ini adalah permainan sederhana yang dirancang untuk memberikan pengalaman interaktif bagi pemain dalam mencari harta karun tersembunyi. Pemain diberikan petunjuk dalam bentuk teka-teki atau deskripsi lokasi, dan mereka harus menebak tempat di mana harta karun tersebut tersembunyi. Program ini menggabungkan berbagai konsep pemrograman seperti RegEx, Object-Oriented Programming (OOP), string manipulation, dan looping untuk menciptakan pengalaman permainan yang seru dan menantang.
 
