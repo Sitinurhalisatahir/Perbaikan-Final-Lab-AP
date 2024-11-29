@@ -77,5 +77,101 @@ Setelah pemain menebak lokasi yang benar atau kehabisan kesempatan, permainan be
 
 - Fitur Multiplayer: Program ini dapat dikembangkan lebih lanjut menjadi game multiplayer, di mana pemain bersaing untuk menemukan harta karun dengan lebih banyak pemain.
 
+# Materi Pemrograman yang Diterapkan dalam Kode Pencarian Harta Karun
+Program Pencarian Harta Karun ini melibatkan berbagai konsep dasar dalam pemrograman. Di bawah ini adalah penjelasan tentang materi-materi yang diterapkan dalam kode tersebut:
+
+1. Conditional Statements (Pernyataan Kondisional)
+- Materi yang Diterapkan:
+Program menggunakan conditional statements untuk memeriksa kondisi tertentu dan mengambil keputusan berdasarkan hasil pemeriksaan tersebut. Kondisional yang paling sering digunakan dalam kode ini adalah if dan else.
+
+- Implementasi dalam Kode:
+Di dalam metode mulai_permainan(), kondisional digunakan untuk mengecek apakah tebakan pemain sesuai dengan lokasi harta karun atau tidak.
+
+if validasi_jawaban(jawaban, self.pola):
+    print("Selamat! Kamu menemukan harta karun!")
+    break
+else:
+    kesempatan -= 1
+    print("Tebakan salah. Coba lagi.")
+   
+Kondisional ini memeriksa apakah jawaban pemain sesuai dengan pola yang ditentukan (lokasi harta karun). Jika benar, permainan berakhir dengan kemenangan, jika tidak, pemain diberikan kesempatan untuk menebak lagi.
+
+2. Looping (Perulangan)
+- Materi yang Diterapkan:
+Program menggunakan looping untuk memberikan pemain kesempatan untuk menebak beberapa kali (maksimal 3 kali). Jika tebakan salah, pemain masih memiliki kesempatan untuk mencoba lagi.
+
+- Implementasi dalam Kode:
+Dalam fungsi mulai_permainan(), digunakan while loop untuk memeriksa apakah pemain masih memiliki kesempatan untuk menebak. Loop ini akan berhenti ketika pemain berhasil menebak dengan benar atau kehabisan kesempatan.
+
+while kesempatan > 0:
+    jawaban = input(f"\nTebakanmu (kesempatan tersisa {kesempatan}): ").strip().lower()
+    if validasi_jawaban(jawaban, self.pola):
+        print("Selamat! Kamu menemukan harta karun!")
+        break
+    else:
+        kesempatan -= 1
+        print("Tebakan salah. Coba lagi.")
+   
+3. Functions (Fungsi)
+- Materi yang Diterapkan:
+Fungsi adalah konsep dasar dalam pemrograman untuk mengelompokkan kode yang memiliki tujuan tertentu. Dalam kode ini, berbagai fungsi dibuat untuk mengelola logika permainan.
+
+- Implementasi dalam Kode:
+Fungsi-fungsi seperti buat_petunjuk(), lokasi_harta_karun(), dan beri_petunjuk_tambahan() masing-masing memiliki tujuan spesifik. Misalnya, buat_petunjuk() menghasilkan petunjuk secara acak, dan lokasi_harta_karun() menentukan lokasi harta karun.
+
+def buat_petunjuk():
+    petunjuk = [
+        "Harta karun terletak di dekat pohon oak tua.",
+        "Cari di bawah patung burung elang.",
+        "Harta karun ada di bawah pasir di pantai.",
+        "Cari di gua utara di balik air terjun.",
+        "Harta karun tersembunyi di dalam peti tua di perpustakaan."
+    ]
+    return random.choice(petunjuk)
+
+4. String Manipulation (Manipulasi String)
+- Materi yang Diterapkan:
+Manipulasi string adalah proses memodifikasi atau memanipulasi data berbentuk string. Dalam program ini, manipulasi string dilakukan untuk memastikan jawaban pemain tidak terpengaruh oleh spasi atau kapitalisasi huruf.
+
+- Implementasi dalam Kode:
+Program menggunakan strip() untuk menghapus spasi ekstra pada input pemain dan lower() untuk mengubah input menjadi huruf kecil, yang memastikan validasi jawaban dapat dilakukan dengan konsisten.
+
+jawaban = input(f"\nTebakanmu (kesempatan tersisa {kesempatan}): ").strip().lower()
+
+5. Regular Expressions (RegEx)
+- Materi yang Diterapkan:
+RegEx (Regular Expressions) digunakan untuk mencocokkan pola tertentu dalam string. Pada kode ini, RegEx digunakan untuk memeriksa apakah jawaban pemain sesuai dengan pola yang tepat (lokasi harta karun).
+
+- Implementasi dalam Kode:
+Fungsi validasi_jawaban() menggunakan re.match() untuk mencocokkan input pemain dengan pola yang sudah ditentukan untuk lokasi harta karun.
+
+def validasi_jawaban(jawaban, pola):
+    return re.match(pola, jawaban, re.IGNORECASE)
+   
+6. Object-Oriented Programming (OOP)
+-Materi yang Diterapkan:
+Object-Oriented Programming (OOP) adalah paradigma pemrograman yang mengorganisir kode dalam objek dan kelas. Dalam program ini, kelas PermainanPencarianHarta mengelola logika permainan, termasuk lokasi harta karun, petunjuk, dan proses permainan.
+Implementasi dalam Kode:
+
+- Program ini mengimplementasikan OOP dengan mendefinisikan kelas PermainanPencarianHarta yang memiliki atribut dan metode terkait permainan. Misalnya, self.lokasi_harta adalah atribut untuk menyimpan lokasi harta karun yang dipilih, dan self.mulai_permainan() adalah metode untuk memulai permainan.
+
+class PermainanPencarianHarta:
+    def __init__(self):
+        self.lokasi_harta = lokasi_harta_karun()
+        self.petunjuk = buat_petunjuk()
+        self.pola = re.escape(self.lokasi_harta)
+        
+7. Data Types (Tipe Data)
+- Materi yang Diterapkan:
+Tipe data merujuk pada jenis data yang digunakan dalam program, seperti string, integer, dan list. Di dalam kode ini, berbagai tipe data digunakan untuk menyimpan informasi seperti lokasi harta karun, petunjuk, dan kesempatan tebakan.
+Implementasi dalam Kode:
+
+- List digunakan untuk menyimpan berbagai lokasi dan petunjuk yang dipilih secara acak.
+String digunakan untuk menyimpan input dari pemain dan petunjuk yang ditampilkan.
+Integer digunakan untuk menyimpan jumlah kesempatan yang tersisa bagi pemain.
+
+lokasi = ["pohon oak tua", "patung burung elang", "pantai", "gua utara", "peti tua di perpustakaan"]
+kesempatan = 3
+
 # Kesimpulan
-Program Pencarian Harta Karun ini adalah contoh permainan interaktif yang menggunakan berbagai konsep pemrograman seperti RegEx, OOP, dan looping. Dengan mekanisme permainan yang menantang dan fitur-fitur seperti petunjuk tambahan dan validasi jawaban, program ini memberikan pengalaman yang menyenangkan dan mendidik. Pemain bisa belajar sambil bermain, sekaligus mengasah keterampilan pemrograman seperti penggunaan ekspresi reguler dan pemrograman berorientasi objek.
+Program Pencarian Harta Karun ini menggabungkan berbagai konsep dasar pemrograman seperti Object-Oriented Programming (OOP), RegEx, looping, conditional statements, string manipulation, dan data types untuk menciptakan permainan yang interaktif dan menyenangkan. Dengan menggunakan OOP, program ini mengorganisir logika permainan dalam kelas, membuat kode lebih terstruktur dan mudah dikembangkan. Pemain diberikan kesempatan untuk menebak lokasi harta karun berdasarkan petunjuk yang diberikan, dan program memanfaatkan RegEx untuk memvalidasi jawaban pemain, memastikan input yang dimasukkan sesuai dengan format yang benar. Program ini juga menerapkan looping untuk memberikan beberapa kesempatan tebakan, dan conditional statements untuk mengontrol alur permainan, misalnya menentukan apakah tebakan benar atau salah. Fungsi-fungsi dalam program ini membantu modularisasi kode, membuatnya lebih mudah dipahami dan dikembangkan. Secara keseluruhan, permainan ini tidak hanya menghibur tetapi juga memperlihatkan penerapan praktis dari teknik-teknik pemrograman dasar yang penting.
