@@ -69,10 +69,13 @@ Jika tebakan pemain salah, program akan memberikan petunjuk tambahan yang lebih 
 Setelah pemain menebak lokasi yang benar atau kehabisan kesempatan, permainan berakhir dan program memberikan ringkasan permainan.
 
 # Fleksibilitas dan Pengembangan Program
-Ekstensi Petunjuk: Program ini dapat dikembangkan lebih lanjut dengan menambahkan lebih banyak jenis petunjuk atau variasi dalam teka-teki untuk membuat permainan lebih menarik.
-Penyimpanan Data: Data permainan (seperti lokasi harta karun dan jawaban pemain) dapat disimpan dalam file eksternal untuk analisis lebih lanjut atau untuk digunakan dalam permainan berikutnya.
-Tingkat Kesulitan: Program ini dapat diperluas dengan menambahkan tingkat kesulitan, seperti meningkatkan jumlah petunjuk yang diberikan atau mengurangi jumlah kesempatan untuk menebak.
-Fitur Multiplayer: Program ini dapat dikembangkan lebih lanjut menjadi game multiplayer, di mana pemain bersaing untuk menemukan harta karun dengan lebih banyak pemain.
+- Ekstensi Petunjuk: Program ini dapat dikembangkan lebih lanjut dengan menambahkan lebih banyak jenis petunjuk atau variasi dalam teka-teki untuk membuat permainan lebih menarik.
+
+- Penyimpanan Data: Data permainan (seperti lokasi harta karun dan jawaban pemain) dapat disimpan dalam file eksternal untuk analisis lebih lanjut atau untuk digunakan dalam permainan berikutnya.
+
+- Tingkat Kesulitan: Program ini dapat diperluas dengan menambahkan tingkat kesulitan, seperti meningkatkan jumlah petunjuk yang diberikan atau mengurangi jumlah kesempatan untuk menebak.
+
+- Fitur Multiplayer: Program ini dapat dikembangkan lebih lanjut menjadi game multiplayer, di mana pemain bersaing untuk menemukan harta karun dengan lebih banyak pemain.
 
 # Kesimpulan
 Program Pencarian Harta Karun ini adalah contoh permainan interaktif yang menggunakan berbagai konsep pemrograman seperti RegEx, OOP, dan looping. Dengan mekanisme permainan yang menantang dan fitur-fitur seperti petunjuk tambahan dan validasi jawaban, program ini memberikan pengalaman yang menyenangkan dan mendidik. Pemain bisa belajar sambil bermain, sekaligus mengasah keterampilan pemrograman seperti penggunaan ekspresi reguler dan pemrograman berorientasi objek.
